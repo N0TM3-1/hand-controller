@@ -1,5 +1,4 @@
 from pynput.keyboard import Controller
-
 import disable_warnings
 disable_warnings.disable()
 from pynput.keyboard import Key, Controller
@@ -11,7 +10,7 @@ mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
 
 # Start capturing video
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 keyboard = Controller()
 def detect_fist(hand_landmarks):
     if hand_landmarks.landmark[8].y > hand_landmarks.landmark[6].y and hand_landmarks.landmark[12].y > hand_landmarks.landmark[10].y and hand_landmarks.landmark[16].y > hand_landmarks.landmark[14].y and hand_landmarks.landmark[20].y > hand_landmarks.landmark[18].y:
